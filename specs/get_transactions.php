@@ -23,6 +23,7 @@ return [
 	// Fields
 
 	"fields"				=> [
+		"id"				=> [],
 		"payment_dt"		=> [],
 		"from_account_id"	=> [],
 		"to_account_id"		=> [],
