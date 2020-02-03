@@ -24,6 +24,7 @@ return [
 		"shop_nm"			=> [],
 		"memo_txt"			=> [],
 		"sort_no"			=> [],
+		"title"				=> [],
 	],
 
 	// Search conditions
