@@ -1,17 +1,24 @@
 <?php
 return [
 
+	// Options
+
+	"options" => [
+		"userId"	=> "id",
+		"userName"	=> "user_nm"
+	],
+
 	// Databases
 
 	"databases"	=> [
-		"sqlite"			=> [ "tableName" => "user",	"keyName" => "id" ],
+		"sqlite"			=> [ "tableName" => "user",	"keyName" => "user_nm" ],
 	],
 
 	// Parameters
 
 	"parameters" => [
-		"user" 				=> [ "fieldType" => "TEXT" ],
-		"password" 			=> [ "fieldType" => "TEXT" ],
+		"user" 				=> [ "fieldType" => "TEXT", "validator" => ["required"] ],
+		"password" 			=> [ "fieldType" => "TEXT", "validator" => ["required"] ],
 	],
 
 	// Fields
