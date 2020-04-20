@@ -31,8 +31,8 @@ return [
 		"item_nm"			=> [],
 		"shop_nm"			=> [],
 		"memo_txt"			=> [],
+		"user_id"			=> [ "value" => "@SESSION_USER_ID@" ],
 		/*
-		"user_id"			=> [ "value" => "@USER_ID@" ],
 		"create_dt"			=> [ "value" => "@CURRENT_DATETIME@" ],
 		"update_dt"			=> [ "value" => "@CURRENT_DATETIME@" ],
 		 */
