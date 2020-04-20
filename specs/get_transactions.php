@@ -1,6 +1,14 @@
 <?php
 return [
 
+	// Options
+
+	"options" => [
+		"maxLimit"			=> 50,
+		"maxOffset"			=> 999,
+		"retryOffset"		=> 0,
+	],
+
 	// Databases
 
 	"databases"	=> [
@@ -38,7 +46,9 @@ return [
 
 	"searches" => [
 		"default" => [
+			[ "field" 		=> "user_id", "compare" => "=", "value" => "@SESSION_USER_ID@" ],
 			[ "field" 		=> "delete_dt", "compare" => "=", "value" => "@NULL@" ],
+			[ "type" => "operator", "value" => "AND" ],
 			[ "type" => "parameters", "operator" => "OR", "fields" => [
 					[ "parameter" => "account_id", "field" => "from_account_id", "comparer" => "=", "type" => "item" ],
 					[ "parameter" => "account_id", "field" => "to_account_id", "comparer" => "=", "type" => "item" ],
