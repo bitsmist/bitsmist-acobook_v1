@@ -14,7 +14,8 @@ function getSql($title)
 	switch ($title) {
 	case "monthly":
 		$target = date("Ym", strtotime("-9 months")) . "01";
-		$sql = "SELECT SUBSTR(payment_dt, 0, 7) YM, category_id CATEGORY, SUM(total_prc) TOTAL FROM `transaction` WHERE from_account_id IS NOT NULL AND to_account_id IS NULL AND payment_dt >= '". $target . "' GROUP BY SUBSTR(payment_dt, 0, 7), category_id ORDER BY SUBSTR(payment_dt, 0, 7) DESC, category_id";
+		//$sql = "SELECT SUBSTR(payment_dt, 0, 7) YM, category_id CATEGORY, SUM(total_prc) TOTAL FROM `transaction` WHERE from_account_id IS NOT NULL AND to_account_id IS NULL AND payment_dt >= '". $target . "' GROUP BY SUBSTR(payment_dt, 0, 7), category_id ORDER BY SUBSTR(payment_dt, 0, 7) DESC, category_id";
+		$sql = "SELECT SUBSTR(payment_dt, 0, 7) YM, category_id CATEGORY, SUM(total_prc) TOTAL FROM `transaction` WHERE from_account_id IS NOT NULL AND to_account_id IS NULL GROUP BY SUBSTR(payment_dt, 0, 7), category_id ORDER BY SUBSTR(payment_dt, 0, 7) DESC, category_id";
 		break;
 	}
 
@@ -27,14 +28,15 @@ function getSql($title)
  * Handler
  */
 // ============================================================================
-
-return function ($request, $response)
+//
+return function($request, $handler)
 {
 
-	$id = $request->getAttribute("appInfo")["args"]["id"];
+	$id = $request->getAttribute("routeInfo")["args"]["id"] ?? "mothly";
 	$gets = $request->getQueryParams();
-	$dbs = $request->getAttribute("databases");
-	$db = $dbs->getPlugins()["sqlite"];
+	//$dbs = $request->getAttribute("services")["db"];
+	//$db = $dbs->getPlugins()["sqlite"];
+	$db = $request->getAttribute("services")["db"]["sqlite"];
 
 	$sql = getSql($id);
 	$cmd = $db->createCommand($sql);
@@ -46,6 +48,6 @@ return function ($request, $response)
 	$request = $request->withAttribute("resultCount", $resultCount);
 	$request = $request->withAttribute("totalCount", $totalCount);
 
-	return $request;
+	return $handler->handle($request);
 
 };
