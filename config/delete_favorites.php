@@ -1,16 +1,12 @@
 <?php
 return [
+	// -------------------------------------------------------------------------
+	//	Plugins
+	// -------------------------------------------------------------------------
 
-	// Databases
-
-	"databases"	=> [
-		"sqlite"			=> [ "tableName" => "favorite", "keyName" => "id" ],
+	"sqlite" => [
+		"tableName" => "favorite",
+		"keyName" => "id"
 	],
-
-	// Parameters
-
-	"parameters" => [
-	],
-
 ];
 

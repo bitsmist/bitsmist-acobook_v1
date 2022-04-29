@@ -34,5 +34,4 @@ return [
 			"update_dt" => [ "value" => "@CURRENT_DATETIME@" ],
 		],
 	],
-
 ];
