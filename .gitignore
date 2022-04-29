@@ -2,5 +2,4 @@
 db/
 log/
 vendor/
-settings.php
 composer.lock
