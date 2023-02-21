@@ -1,11 +1,8 @@
 <?php
 
-// ============================================================================
 /**
  * Functions
  */
-// ============================================================================
-
 function getSql($title)
 {
 
@@ -23,23 +20,17 @@ function getSql($title)
 
 }
 
-// ============================================================================
 /**
  * Handler
  */
-// ============================================================================
-//
 return function($request, $handler)
 {
 
-	$id = $request->getAttribute("routeInfo")["args"]["id"] ?? "mothly";
+	$id = $request->getAttribute("routeInfo")["args"]["id"] ?? "monthly";
 	$gets = $request->getQueryParams();
-	//$dbs = $request->getAttribute("services")["db"];
-	//$db = $dbs->getPlugins()["sqlite"];
 	$db = $request->getAttribute("services")["db"]["sqlite"];
 
-	$sql = getSql($id);
-	$cmd = $db->createCommand($sql);
+	$cmd = $db->createCommand(getSql($id));
 	$data = $db->getData($cmd);
 	$resultCount = count($data);
 	$totalCount = count($data);
