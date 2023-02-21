@@ -26,7 +26,7 @@ return [
 	// -------------------------------------------------------------------------
 
     "options" => [
-		"name" 				=> "api.dev.acobook.com",
+		"name" => "api.dev.acobook.com",
 		"allowedOrigins" => [
 			"http://dev.acobook.com",
 			"chrome-extension://eipdnjedkpcnlmmdfdkgfpljanehloah"
@@ -35,7 +35,7 @@ return [
 			"Access-Control-Allow-Credentials" => "true",
 		],
 		"session" => [
-			"cookieName"	=> "acobook-sid",
+			"cookieName"	=> "acobook-dev-sid",
 			"cookieOptions"	=> [
 				"domain"	=> ".api.dev.acobook.com",
 				"path"		=> "/",
@@ -85,14 +85,14 @@ return [
 		"className"			=> "Bitsmist\\v1\Plugins\Logger\FileLogger",
 		"level"				=> "debug",
 		"baseDir"			=> __DIR__ . "/../log/",
-		"fileName"			=> "acobook.log",
+		"fileName"			=> "acobook_debug.log",
 	],
 
-	"emergencyLogger" => [
+	"warningLogger" => [
 		"className"			=> "Bitsmist\\v1\Plugins\Logger\FileLogger",
 		"level"				=> "emergency",
 		"baseDir"			=> __DIR__ . "/../log/",
-		"fileName"			=> "acobook_emergency.log",
+		"fileName"			=> "acobook_warning.log",
 	],
 
 	"sqlite" => [
