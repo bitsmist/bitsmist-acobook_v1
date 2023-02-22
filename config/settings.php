@@ -10,11 +10,16 @@ return [
 		"routes" => [
 			"readonly" => [
 				"method" => "GET",
-				"route" =>"/v{appVer}/{resource:accounts|categories|authentications}/{id}.{format}",
+				"route" =>"/v{appVer}/{resource:accounts|categories|authentications|stats}/{id}.{format}",
 				"handler" => "default",
 			],
 			"readwrite" => [
 				"method" => "OPTIONS,PUT,POST,GET",
+				"route" =>"/v{appVer}/{resource:transactions|favorites}/{id}.{format}",
+				"handler" => "default",
+			],
+			"remove" => [
+				"method" => "DELETE",
 				"route" =>"/v{appVer}/{resource:transactions|favorites}/{id}.{format}",
 				"handler" => "default",
 			],
