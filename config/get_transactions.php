@@ -13,6 +13,7 @@ return [
 				"total_prc",
 				"item_nm",
 				"shop_nm",
+				"memo_txt",
 				"_limit" 			=> [ "fieldType" => "NUMBER" ],
 				"_offset" 			=> [ "fieldType" => "NUMBER" ],
 			],
@@ -61,8 +62,8 @@ return [
 				[ "fieldName" 		=> "delete_dt", "compare" => "=", "value" => "@NULL@" ],
 				[ "type" => "operator", "value" => "AND" ],
 				[ "type" => "parameters", "operator" => "OR", "fields" => [
-						[ "parameterName" => "account_id", "field" => "from_account_id", "comparer" => "=", "type" => "item" ],
-						[ "parameterName" => "account_id", "field" => "to_account_id", "comparer" => "=", "type" => "item" ],
+						[ "parameterName" => "account_id", "fieldName" => "from_account_id", "comparer" => "=", "type" => "item" ],
+						[ "parameterName" => "account_id", "fieldName" => "to_account_id", "comparer" => "=", "type" => "item" ],
 					]
 				],
 				[ "type" => "operator", "value" => "AND" ],
@@ -72,6 +73,7 @@ return [
 						[ "type"=>"parameter", "parameterName" => "payment_dt", "fieldName" => "payment_dt", "comparer" => "=", "compareType" => "item" ],
 						[ "type"=>"parameter", "parameterName" => "item_nm", "fieldName" => "item_nm", "comparer" => "like", "compareType" => "item" ],
 						[ "type"=>"parameter", "parameterName" => "shop_nm", "fieldName" => "shop_nm", "comparer" => "like", "compareType" => "item" ],
+						[ "type"=>"parameter", "parameterName" => "memo_txt", "fieldName" => "memo_txt", "comparer" => "like", "compareType" => "item" ],
 					]
 				],
 				[ "type" => "operator", "value" => "AND" ],
