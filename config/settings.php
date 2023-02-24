@@ -20,7 +20,7 @@ return [
 			],
 			"remove" => [
 				"method" => "DELETE",
-				"route" =>"/v{appVer}/{resource:transactions|favorites}/{id}.{format}",
+				"route" =>"/v{appVer}/{resource:transactions|favorites|authentications}/{id}.{format}",
 				"handler" => "default",
 			],
 		]
