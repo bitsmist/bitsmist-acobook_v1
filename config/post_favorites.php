@@ -7,11 +7,13 @@ return [
 	"options" => [
 		"body" => [
 			"parameters" => [
+				"payment_dt",
 				"from_account_id",
 				"to_account_id",
 				"category_id",
 				"item_nm",
 				"shop_nm",
+				"total_prc",
 				"memo_txt",
 				"sort_no",
 				"title"
@@ -34,11 +36,13 @@ return [
 
 	"dbHandler" => [
 		"fields"	=> [
+			"payment_dt",
 			"from_account_id",
 			"to_account_id",
 			"category_id",
 			"item_nm",
 			"shop_nm",
+			"total_prc",
 			"memo_txt",
 			"sort_no",
 			"title",
