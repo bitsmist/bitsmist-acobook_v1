@@ -101,7 +101,7 @@ return [
 	],
 
 	"sqlite" => [
-		"className"			=> "Bitsmist\\v1\Plugins\Db\PdoDb",
+		"className"			=> "Bitsmist\\v1\Plugins\DB\PdoDB",
 		"type"				=> "SQLITE",
 		"dsn"				=> "sqlite:" . __DIR__ . "/../db/acobook.db",
 		"user"				=> "",
